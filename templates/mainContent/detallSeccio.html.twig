@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+	<!-- ======= About Section ======= -->
+	<section id="about" class="about">
+		<div class="container">
+			<div class="section-title">
+				<h2>{{seccio.nom}}</h2>
+				<p>{{seccio.any}}</p>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-4" data-aos="fade-right">
+					<img src="{{ asset('assets/img/portfolio/' ~ seccio.imatge) }}" class="img-fluid" alt="">
+				</div>
+				<div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+					<p class="fst-italic">
+						{{seccio.descripcio}}
+					</p>
+					<div class="row">
+						<div class="col-lg-6">
+							{% for article in seccio.articles %}
+								<ul>
+									<li>
+										<i class="bi bi-chevron-right"></i>
+										<strong>{{article}}</strong>
+										{# <span>1 May 1995</span> #}
+									</li>
+								</ul>
+							{% endfor %}
+						</div>
+					</div>
+					{# <p>
+					Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+					Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+					</p> #}
+					<div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+						<div class="icon">
+							<a href="{{path('seccions')}}">
+								<i class="bi bi-chevron-left"></i> Torna enrere
+							</a>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<!-- End About Section -->
+	{% endblock %}
